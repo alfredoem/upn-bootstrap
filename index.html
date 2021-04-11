@@ -190,18 +190,13 @@
                     </div>
 
                     <div class="col-sm-10 offset-sm-1">
-                        <input type="text" class="form-control" id="txtReference" placeholder="Referencia" value=""
-                               required="">
-                    </div>
-
-                    <div class="col-sm-10 offset-sm-1">
                         <input type="tel" class="form-control" id="txtPhoneNumber" placeholder="Teléfono" value=""
                                required="">
                     </div>
 
                     <div class="col-sm-10 offset-sm-1">
                         <select class="form-select" id="selProduct" required="">
-                            <option value="">Selecciona tu producto</option>
+                            <option value="">(*) Selecciona tu producto</option>
                             <option>RIPLEY - Playstation 5</option>
                             <option>LINIO - Macbook Apple Air 13 pulgadas</option>
                             <option>LUMINGO - Xiaomi Redmi Note 9</option>
@@ -211,15 +206,15 @@
 
                     <div class="col-sm-10 offset-sm-1">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rbtEfectivo" value="Efectivo" checked>
+                            <label class="form-check-label" for="rbtEfectivo">
                                 Efectivo
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                   checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="rbtTarjeta"
+                                   value="Tarjeta">
+                            <label class="form-check-label" for="rbtTarjeta">
                                 Tarjeta Crédito/Debito
                             </label>
                         </div>
@@ -242,7 +237,9 @@
                     <th scope="col">#</th>
                     <th scope="col">Destinatario</th>
                     <th scope="col">Dirección</th>
+                    <th scope="col">Teléfono</th>
                     <th scope="col">Pedido</th>
+                    <th scope="col">Medio pago</th>
                 </tr>
                 </thead>
                 <tbody id="tablePedidos">
