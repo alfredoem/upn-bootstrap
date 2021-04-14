@@ -73,6 +73,7 @@ function registrarPedido() {
         lista_pedidos[numero_pedido] = pedido;
         mostrarPedidos();
         numero_pedido++;
+        alert('Felicidades tu pedido N° ' + numero_pedido  + ' a sido registrado correctamente.');
     }
 
 }
