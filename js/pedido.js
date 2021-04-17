@@ -25,12 +25,21 @@ function validaciones(pedido) {
         return false;
     }
 
+    if (pedido['telefono'].trim() !== "" && !pedido['telefono'].trim().match(/[0-9]{7,11}/)) {
+        document.getElementById("divMessages").innerHTML = '<div class="alert alert-danger" role="alert">' +
+            'Ingrese un número de teléfono válido' +
+            '</div>';
+        return false;
+    }
+
     if (pedido['producto'].trim() === "(*) Selecciona tu producto") {
         document.getElementById("divMessages").innerHTML = '<div class="alert alert-danger" role="alert">' +
             'Debe seleccionar un producto' +
             '</div>';
         return false;
     }
+
+    document.getElementById("divMessages").innerHTML = '';
 
     return true;
 }
@@ -50,6 +59,15 @@ function mostrarPedidos() {
     });
 
     tabla_pedidos.innerHTML = pedidos_html;
+}
+
+function limpiarFormulario() {
+    document.getElementById("txtName").value = '';
+    document.getElementById("txtDocumentNumber").value = '';
+    document.getElementById("txtAddress").value = '';
+    document.getElementById("txtPhoneNumber").value = '';
+    document.getElementById("selProduct").value = 'default';
+    document.getElementById("txtName").focus();
 }
 
 function registrarPedido() {
@@ -72,8 +90,9 @@ function registrarPedido() {
     if (validaciones(pedido) === true) {
         lista_pedidos[numero_pedido] = pedido;
         mostrarPedidos();
+        alert('¡Felicidades tu pedido N° ' + numero_pedido  + ' a sido registrado correctamente!');
         numero_pedido++;
-        alert('Felicidades tu pedido N° ' + numero_pedido  + ' a sido registrado correctamente.');
+        limpiarFormulario();
     }
 
 }
